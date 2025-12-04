@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARMS InfoTech BD - Digital Solutions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Color Palette */
+        :root {
+            /* Header & Footer */
+            --primary-header-footer: #082e64; /* Dark Gray */
+
+            /* Hero Section */
+            --primary-hero: #6EE7B7;  /* Emerald */
+            --primary-hero-accent: #38BDF8; /* Sky Blue */
+            
+            /* Services Section */
+            --primary-services: #58ad50; /* green */
+            
+            /* About Section */
+            --primary-about: #c48947; /* Blue */
+            
+            /* Contact Section */
+            --primary-contact: #FBBF24; /* Amber */
+            
+            /* Call to Action */
+            --primary-cta: #F59E0B; /* Amber 500 */
+            
+            /* Portfolio */
+            --primary-portfolio: #1cd871; /* Violet */
+            
+            /* Team */
+            --primary-team: #06B6D4; /* Cyan */
+            
+            /* FAQ */
+            --primary-faq: #10B981; /* Green */
+            
+            /* Tech Badges */
+            --primary-tech: #63554b; /* Gray 600 */
+            
+            /* Background and Text */
+            --black-bg: #111827; /* Darkest Gray */
+            --dark-card: #464f5a; /* Dark Gray */
+            --text-white: #0b0f13; /* Light Gray */
+            --text-light-50: #948e3a; /* Gray 400 */
+        }
+
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--black-bg);
+            color: var(--text-black);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Reusable Gradient for text */
+        .text-gradient {
+            background: linear-gradient(45deg, var(--primary-hero), var(--primary-services), var(--primary-about));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bg-black {
+            background-color: var(--black-bg) !important;
+        }
+
+        .bg-dark-card {
+            background-color: var(--dark-card) !important;
+        }
+
+        /* Custom Header & Footer Class */
+        .bg-custom-dark {
+            background-color: var(--primary-header-footer) !important;
+        }
+        /* --- Logo Sizing --- */
+        .logo-image {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+        }
+        /* --- Team Images Sizing for a professional look --- */
+        .team-image {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+        /* Button & Link Styles by Section */
+        .btn-primary-hero { background-color: var(--primary-hero); border-color: var(--primary-hero); color: var(--black-bg) !important; font-weight: bold; box-shadow: 0 0 10px var(--primary-hero); transition: all 0.3s ease; }
+        .btn-primary-hero:hover { box-shadow: 0 0 20px var(--primary-hero); transform: translateY(-2px); }
+        .text-primary-hero { color: var(--primary-hero) !important; }
+
+        .border-primary-services { border-color: var(--primary-services) !important; }
+        .text-primary-services { color: var(--primary-services) !important; }
+        .card.border-primary-services:hover { box-shadow: 0 0 20px var(--primary-services); transform: translateY(-5px); }
+
+        .border-primary-about { border-color: var(--primary-about) !important; }
+        .text-primary-about { color: var(--primary-about) !important; }
+        .btn-outline-about { border-color: var(--primary-about); color: var(--primary-about); transition: all 0.3s ease; }
+        .btn-outline-about:hover { background-color: var(--primary-about); color: var(--black-bg) !important; }
+
+        .border-primary-cta { border-color: var(--primary-cta) !important; }
+        .text-primary-cta { color: var(--primary-cta) !important; }
+        .btn-primary-cta { background-color: var(--primary-cta); border-color: var(--primary-cta); color: var(--black-bg) !important; font-weight: bold; transition: all 0.3s ease; }
+        .btn-primary-cta:hover { box-shadow: 0 0 20px var(--primary-cta); transform: translateY(-2px); }
+        .btn-outline-cta { border-color: var(--primary-cta); color: var(--primary-cta); transition: all 0.3s ease; }
+        .btn-outline-cta:hover { background-color: var(--primary-cta); color: var(--black-bg) !important; }
+
+        .border-primary-portfolio { border-color: var(--primary-portfolio) !important; }
+        .text-primary-portfolio { color: var(--primary-portfolio) !important; }
+        .btn-outline-portfolio { border-color: var(--primary-portfolio); color: var(--primary-portfolio); transition: all 0.3s ease; }
+        .btn-outline-portfolio:hover { background-color: var(--primary-portfolio); color: var(--black-bg) !important; }
+
+        .border-primary-team { border-color: var(--primary-team) !important; }
+        .text-primary-team { color: var(--primary-team) !important; }
+        .card.border-primary-team:hover { box-shadow: 0 0 20px var(--primary-team); transform: translateY(-5px); }
+
+        .border-primary-faq { border-color: var(--primary-faq) !important; }
+        .text-primary-faq { color: var(--primary-faq) !important; }
+        .accordion-item:hover { box-shadow: 0 0 20px var(--primary-faq); }
+
+        .border-primary-contact { border-color: var(--primary-contact) !important; }
+        .text-primary-contact { color: var(--primary-contact) !important; }
+        .btn-primary-contact { background-color: var(--primary-contact); border-color: var(--primary-contact); color: var(--black-bg) !important; font-weight: bold; transition: all 0.3s ease; }
+        .btn-primary-contact:hover { box-shadow: 0 0 20px var(--primary-contact); transform: translateY(-2px); }
+        .btn-outline-contact { border-color: var(--primary-contact); color: var(--primary-contact); transition: all 0.3s ease; }
+        .btn-outline-contact:hover { background-color: var(--primary-contact); color: var(--black-bg) !important; }
+
+        .border-primary-tech { border-color: var(--primary-tech) !important; }
+
+        /* Card and Form Styles */
+        .card, .form-control-dark, .form-select, .accordion-item {
+            background-color: var(--dark-card);
+            border: 1px solid var(--primary-tech);
+            box-shadow: 0 0 10px var(--primary-tech);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-control-dark, .form-select {
+            background-color: var(--dark-card) !important;
+            border: 1px solid var(--primary-tech);
+            color: var(--text-white) !important;
+        }
+        .form-control-dark:focus, .form-select:focus {
+            border-color: var(--primary-contact);
+            box-shadow: 0 0 10px var(--primary-contact);
+            background-color: var(--dark-card);
+        }
+
+        .accordion-button {
+            background-color: var(--dark-card) !important;
+            color: var(--primary-faq) !important;
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: var(--dark-card) !important;
+            border-bottom: 1px solid var(--primary-faq);
+        }
+        .accordion-body {
+            background-color: var(--dark-card) !important;
+            color: var(--text-light-50);
+        }
+
+        /* Floating Shapes Background Animation */
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+        .background-animation li {
+            position: absolute;
+            display: block;
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.3);
+            animation: animate-shapes 25s linear infinite;
+            bottom: -150px;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .background-animation li:nth-child(1) { left: 25%; width: 100px; height: 100px; animation-delay: 0s; background-color: rgba(255, 105, 180, 0.3); border-radius: 50%; }
+        .background-animation li:nth-child(2) { left: 10%; width: 30px; height: 30px; animation-delay: 2s; animation-duration: 12s; background-color: rgba(0, 255, 255, 0.3); transform: rotate(45deg); }
+        .background-animation li:nth-child(3) { left: 70%; width: 40px; height: 40px; animation-delay: 4s; background-color: rgba(30, 144, 255, 0.3); border-radius: 50%; }
+        .background-animation li:nth-child(4) { left: 40%; width: 80px; height: 80px; animation-delay: 0s; animation-duration: 18s; background-color: rgba(255, 69, 0, 0.3); clip-path: polygon(50% 0%, 0% 100%, 100% 100%); }
+        .background-animation li:nth-child(5) { left: 65%; width: 50px; height: 50px; animation-delay: 0s; background-color: rgba(0, 255, 194, 0.3); border-radius: 50%; }
+        .background-animation li:nth-child(6) { left: 75%; width: 130px; height: 130px; animation-delay: 3s; background-color: rgba(148, 0, 211, 0.3); transform: rotate(45deg); }
+        .background-animation li:nth-child(7) { left: 35%; width: 170px; height: 170px; animation-delay: 7s; background-color: rgba(32, 178, 170, 0.3); border-radius: 50%; }
+        .background-animation li:nth-child(8) { left: 50%; width: 35px; height: 35px; animation-delay: 15s; animation-duration: 45s; background-color: rgba(255, 215, 0, 0.3); clip-path: polygon(50% 0%, 0% 100%, 100% 100%); }
+        .background-animation li:nth-child(9) { left: 20%; width: 25px; height: 25px; animation-delay: 2s; animation-duration: 35s; background-color: rgba(75, 0, 130, 0.3); border-radius: 50%; }
+        .background-animation li:nth-child(10) { left: 85%; width: 170px; height: 170px; animation-delay: 0s; animation-duration: 11s; background-color: rgba(255, 105, 180, 0.3); transform: rotate(45deg); }
+        
+        /* Specific Styles for Icons */
+        .background-animation .icon:before {
+            font-family: "Font Awesome 5 Brands", "Font Awesome 5 Free";
+            font-weight: 900;
+            font-size: 100px; /* Increased icon size */
+            color: rgba(255, 255, 255, 0.4); /* Increased opacity */
+            text-shadow: 0 0 5px rgba(170, 167, 167, 0.2);
+            -webkit-filter: blur(1px); /* Subtle blur effect */
+            filter: blur(1px);
+        }
+        
+        .background-animation .icon-linkedin:before { content: "\f08c"; }
+        .background-animation .icon-github:before { content: "\f09b"; }
+        .background-animation .icon-twitter:before { content: "\f099"; }
+        .background-animation .icon-server:before { content: "\f233"; }
+        .background-animation .icon-code:before { content: "\f121"; }
+        .background-animation .icon-cloud:before { content: "\f0c2"; }
+        
+        @keyframes animate-shapes {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            50% { opacity: 0.6; } /* Increased max opacity */
+            100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+
+    <header class="bg-custom-dark sticky-top py-3 shadow-lg">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand text-white fw-bold" href="#">
+                <img src="logo.png.png" alt="Logo" class="d-inline-block align-text-top me-2 border border-primary-hero rounded-circle logo-image">
+                ARMS InfoTech BD
+            </a>
+            <nav class="d-none d-lg-block">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item"><a class="nav-link text-white" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="btn btn-outline-hero d-none d-lg-block">Get Started</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="py-5 position-relative overflow-hidden">
+            <div class="background-animation">
+                <li class="icon icon-linkedin"></li>
+                <li class="icon icon-github"></li>
+                <li class="icon icon-server"></li>
+                <li class="icon icon-code"></li>
+                <li class="icon icon-cloud"></li>
+                <li class="icon icon-twitter"></li>
+                <li class="icon icon-facebook"></li>
+                <li class="icon icon-youtube"></li>
+                <li class="icon icon-tiktok"></li>
+                <li></li><li></li><li></li><li></li>
+            </div>
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6">
+                        <div class="pe-lg-5">
+                            <h1 class="display-3 fw-bold text-primary-hero">Transform Your Business with Cutting-Edge IT Solutions</h1>
+                            <p class="lead text-light-50">We deliver innovative technology solutions that drive growth, enhance security, and streamline operations for businesses of all sizes.</p>
+                            <div class="d-flex align-items-center gap-3 mt-4">
+                                <a href="#" class="btn btn-primary-hero py-3 px-4 rounded-pill">Start Your Project <i class="fas fa-arrow-right ms-2"></i></a>
+                                <a href="#" class="text-decoration-none text-light-50 fw-bold"><i class="fas fa-play me-2 text-primary-hero"></i> Watch Demo</a>
+                            </div>
+                            <div class="d-flex gap-5 mt-5 text-white">
+                                <div class="text-center">
+                                    <h2 class="display-5 fw-bold text-primary-hero">200+</h2>
+                                    <p class="text-light-50 mb-0">Projects Completed</p>
+                                </div>
+                                <div class="text-center">
+                                    <h2 class="display-5 fw-bold text-primary-hero">99.9%</h2>
+                                    <p class="text-light-50 mb-0">Uptime Guarantee</p>
+                                </div>
+                                <div class="text-center">
+                                    <h2 class="display-5 fw-bold text-primary-hero">24/7</h2>
+                                    <p class="text-light-50 mb-0">Support Available</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="position-relative">
+                            <img src="it.png.png" class="img-fluid rounded-4 shadow-lg border border-primary-hero" alt="Two businesspeople working on a laptop.">
+                            <div class="play-button position-absolute top-0 end-0 m-4">
+                                <i class="fas fa-play text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-5 position-relative overflow-hidden">
+            <div class="background-animation">
+                <li class="icon icon-code"></li>
+                <li class="icon icon-server"></li>
+                <li class="icon icon-cloud"></li>
+                <li class="icon icon-linkedin"></li>
+                 <li class="icon icon-linkedin"></li>
+                <li class="icon icon-github"></li>
+                <li class="icon icon-server"></li>
+                <li class="icon icon-code"></li>
+                <li class="icon icon-cloud"></li>
+                <li class="icon icon-twitter"></li>
+                <li class="icon icon-facebook"></li>
+                <li class="icon icon-youtube"></li>
+                <li class="icon icon-tiktok"></li>
+            </div>
+            <div class="container">
+                <h2 class="text-center fw-bold mb-5 text-primary-services">Comprehensive IT Services for Your Success</h2>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <div class="col">
+                        <div class="card h-100 bg-dark-card border border-primary-services shadow-lg rounded-4 p-3 service-card">
+                            <div class="card-body">
+                                <div class="service-image-placeholder mb-4">
+                                    <img src="software.png.png" class="img-fluid rounded-3" alt="Custom Software Development">
+                                </div>
+                                <h5 class="card-title fw-bold text-primary-services">Custom Software Development</h5>
+                                <p class="card-text text-light-50">Tailored applications built to meet your specific business requirements and workflows.</p>
+                                <ul class="list-unstyled text-light-50 small">
+                                    <li><i class="fas fa-check-circle me-2 text-primary-services"></i> Web Applications</li>
+                                    <li><i class="fas fa-check-circle me-2 text-primary-services"></i> Mobile Apps</li>
+                                    <li><i class="fas fa-check-circle me-2 text-primary-services"></i> API Development</li>
+                                    <li><i class="fas fa-check-circle me-2 text-primary-services"></i> Legacy System Modernization</li>
+                                </ul>
+                                <a href="#" class="text-decoration-none text-primary-services fw-bold">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 bg-dark-card border border-primary-services shadow-lg rounded-4 p-3 service-card">
+                            <div class="card-body">
+                                <div class="service-image-placeholder mb-4">
+                                    <img src="cloud.png.png" class="img-fluid rounded-3" alt="Cloud Solutions">
+                                </div>
+                                <h5 class="card-title fw-bold text-primary-services">Cloud Solutions</h5>
+                                <p class="card-text text-light-50">Scalable cloud infrastructure and migration services for enhanced performance and flexibility.</p>
+                                <ul class="list-unstyled text-light-50 small">
+                                    <li><i class="fas fa-check-circle me-2 text-primary-services"></i> Cloud Migration</li>
+                                    <li><i class="fas fa-check-circle me-2 text-primary-services"></i> AWS/Azure Setup</li>
+                                    <li><i class="fas fa-check-circle me-2 text-primary-services"></i> DevOps Implementation</li>
+                                    <li><i class="fas fa-check-circle me-2 text-primary-services"></i> Auto-scaling Solutions</li>
+                                </ul>
+                                <a href="#" class="text-decoration-none text-primary-services fw-bold">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 bg-dark-card border border-primary-services shadow-lg rounded-4 p-3 service-card">
+                            <div class="card-body">
+                                <div class="service-image-placeholder mb-4">
+                                    <img src="cyber.png.png" class="img-fluid rounded-3" alt="Cybersecurity">
+                                </div>
+                                <h5 class="card-title fw-bold text-primary-services">Cybersecurity</h5>
+                                <p class="card-text text-light-50">Comprehensive security solutions to protect your business from evolving cyber threats.</p>
+                                <ul class="list-unstyled text-light-50 small">
+                                    <li><i class="fas fa-check-circle me-2 text-primary-services"></i> Security Audits</li>
+                                    <li><i class="fas fa-check-circle me-2 text-primary-services"></i> Penetration Testing</li>
+                                    <li><i class="fas fa-check-circle me-2 text-primary-services"></i> Compliance Management</li>
+                                    <li><i class="fas fa-check-circle me-2 text-primary-services"></i> 24/7 Monitoring</li>
+                                </ul>
+                                <a href="#" class="text-decoration-none text-primary-services fw-bold">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 bg-dark-card border border-primary-services shadow-lg rounded-4 p-3 service-card">
+                            <div class="card-body">
+                                <div class="service-image-placeholder mb-4">
+                                    <img src="data.png.png" class="img-fluid rounded-3" alt="Data Analytics">
+                                </div>
+                                <h5 class="card-title fw-bold text-primary-services">Data Analytics</h5>
+                                <p class="card-text text-light-50">Transform your data into actionable insights with advanced analytics and BI solutions.</p>
+                                <ul class="list-unstyled text-light-50 small">
+                                    <li><i class="fas fa-check-circle me-2 text-primary-services"></i> Data Warehousing</li>
+                                    <li><i class="fas fa-check-circle me-2 text-primary-services"></i> Business Intelligence</li>
+                                    <li><i class="fas fa-check-circle me-2 text-primary-services"></i> Predictive Analytics</li>
+                                    <li><i class="fas fa-check-circle me-2 text-primary-services"></i> Real-time Dashboards</li>
+                                </ul>
+                                <a href="#" class="text-decoration-none text-primary-services fw-bold">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 bg-dark-card border border-primary-services shadow-lg rounded-4 p-3 service-card">
+                            <div class="card-body">
+                                <div class="service-image-placeholder mb-4">
+                                    <img src="it.png.png" class="img-fluid rounded-3" alt="IT Consulting">
+                                </div>
+                                <h5 class="card-title fw-bold text-primary-services">IT Consulting</h5>
+                                <p class="card-text text-light-50">Strategic technology guidance to optimize your IT infrastructure and processes.</p>
+                                <ul class="list-unstyled text-light-50 small">
+                                    <li><i class="fas fa-check-circle me-2 text-primary-services"></i> Technology Strategy</li>
+                                    <li><i class="fas fa-check-circle me-2 text-primary-services"></i> Digital Transformation</li>
+                                    <li><i class="fas fa-check-circle me-2 text-primary-services"></i> Process Optimization</li>
+                                    <li><i class="fas fa-check-circle me-2 text-primary-services"></i> Vendor Management</li>
+                                </ul>
+                                <a href="#" class="text-decoration-none text-primary-services fw-bold">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 bg-dark-card border border-primary-services shadow-lg rounded-4 p-3 service-card">
+                            <div class="card-body">
+                                <div class="service-image-placeholder mb-4">
+                                    <img src="mobile.png.png" class="img-fluid rounded-3" alt="Mobile Solutions">
+                                </div>
+                                <h5 class="card-title fw-bold text-primary-services">Mobile Solutions</h5>
+                                <p class="card-text text-light-50">Native and cross-platform mobile applications for iOS and Android devices.</p>
+                                <ul class="list-unstyled text-light-50 small">
+                                    <li><i class="fas fa-check-circle me-2 text-primary-services"></i> iOS Development</li>
+                                    <li><i class="fas fa-check-circle me-2 text-primary-services"></i> Android Development</li>
+                                    <li><i class="fas fa-check-circle me-2 text-primary-services"></i> React Native</li>
+                                    <li><i class="fas fa-check-circle me-2 text-primary-services"></i> App Store Optimization</li>
+                                </ul>
+                                <a href="#" class="text-decoration-none text-primary-services fw-bold">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5 position-relative overflow-hidden">
+            <div class="background-animation">
+                <li class="icon icon-linkedin"></li>
+                <li class="icon icon-github"></li>
+                <li class="icon icon-server"></li>
+                <li class="icon icon-code"></li>
+                <li class="icon icon-cloud"></li>
+                <li class="icon icon-twitter"></li>
+                <li></li><li></li><li></li><li></li>
+            </div>
+            <div class="container">
+                <div class="text-center p-5 rounded-4 border border-primary-cta" style="background-color: var(--dark-card);">
+                    <h3 class="fw-bold text-primary-cta">Ready to Transform Your Business?</h3>
+                    <p class="text-light-50 lead">Let's discuss how our IT solutions can help you achieve your goals and drive sustainable growth.</p>
+                    <div class="d-flex justify-content-center gap-3 mt-4">
+                        <a href="#" class="btn btn-primary-cta py-3 px-4 rounded-pill">Schedule Consultation</a>
+                        <a href="#" class="btn btn-outline-cta py-3 px-4 rounded-pill">View Case Studies</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-5 position-relative overflow-hidden">
+            <div class="background-animation">
+                <li class="icon icon-server"></li>
+                <li class="icon icon-cloud"></li>
+                <li class="icon icon-code"></li>
+                <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+            </div>
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold text-primary-about">About ARMS InfoTech BD</h2>
+                    <p class="lead text-light-50">We're a team of passionate technology experts dedicated to helping businesses leverage the power of modern IT solutions to achieve their goals.</p>
+                </div>
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6">
+                        <h3 class="fw-bold text-primary-about">Transforming Ideas into Digital Reality</h3>
+                        <p class="text-light-50">Founded in 2014, ARMS InfoTech BD has been at the forefront of digital transformation, helping businesses across various industries modernize their operations and stay competitive in an ever-evolving technological landscape.</p>
+                        <p class="text-light-50">Our multidisciplinary team combines deep technical expertise with business acumen to deliver solutions that not only meet technical requirements but also drive tangible business outcomes.</p>
+                        <ul class="list-unstyled text-light-50">
+                            <li><i class="fas fa-check-circle me-2 text-primary-about"></i> End-to-end project management and delivery</li>
+                            <li><i class="fas fa-check-circle me-2 text-primary-about"></i> Agile development methodologies</li>
+                            <li><i class="fas fa-check-circle me-2 text-primary-about"></i> Continuous integration and deployment</li>
+                            <li><i class="fas fa-check-circle me-2 text-primary-about"></i> Post-launch support and maintenance</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline-about py-3 px-4 rounded-pill mt-4">Learn More About Us <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="p-4 rounded-3 shadow-lg border border-primary-about" style="background-color: var(--dark-card);">
+                            <img src="it.png.png" class="img-fluid rounded-4" alt="Two businesspeople working on a laptop.">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5 bg-black text-white position-relative overflow-hidden">
+            <div class="background-animation">
+                <li class="icon icon-github"></li>
+                <li class="icon icon-code"></li>
+                <li class="icon icon-cloud"></li>
+                <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+            </div>
+            <div class="container text-center">
+                <div class="d-flex justify-content-around my-5">
+                    <div class="stat-item text-white">
+                        <h3 class="display-4 fw-bold text-primary-about">50+</h3>
+                        <p class="text-light-50">Expert Developers</p>
+                    </div>
+                    <div class="stat-item text-white">
+                        <h3 class="display-4 fw-bold text-primary-about">10+</h3>
+                        <p class="text-light-50">Years Experience</p>
+                    </div>
+                    <div class="stat-item text-white">
+                        <h3 class="display-4 fw-bold text-primary-about">25+</h3>
+                        <p class="text-light-50">Countries Served</p>
+                    </div>
+                    <div class="stat-item text-white">
+                        <h3 class="display-4 fw-bold text-primary-about">98%</h3>
+                        <p class="text-light-50">Success Rate</p>
+                    </div>
+                </div>
+
+                <h3 class="fw-bold mb-4 text-primary-about">Our Core Values</h3>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 text-start">
+                    <div class="col">
+                        <div class="card h-100 bg-dark-card border border-primary-about shadow-sm p-3">
+                            <div class="card-body">
+                                <h5 class="fw-bold text-primary-about">Innovation</h5>
+                                <p class="card-text text-light-50">We stay ahead of technology trends to deliver cutting-edge solutions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 bg-dark-card border border-primary-about shadow-sm p-3">
+                            <div class="card-body">
+                                <h5 class="fw-bold text-primary-about">Quality</h5>
+                                <p class="card-text text-light-50">Every project undergoes rigorous testing and quality assurance processes.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 bg-dark-card border border-primary-about shadow-sm p-3">
+                            <div class="card-body">
+                                <h5 class="fw-bold text-primary-about">Partnership</h5>
+                                <p class="card-text text-light-50">We work closely with clients as trusted technology partners, not just vendors.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 bg-dark-card border border-primary-about shadow-sm p-3">
+                            <div class="card-body">
+                                <h5 class="fw-bold text-primary-about">Security</h5>
+                                <p class="card-text text-light-50">Security is built into every solution from the ground up, not as an afterthought.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5 bg-black text-white">
+            <div class="container text-center">
+                <h3 class="fw-bold mb-4 text-primary-tech">Technologies We Work With</h3>
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                    <span class="badge bg-dark-card border border-primary-tech text-white fw-normal rounded-pill p-2">React</span>
+                    <span class="badge bg-dark-card border border-primary-tech text-white fw-normal rounded-pill p-2">Node.js</span>
+                    <span class="badge bg-dark-card border border-primary-tech text-white fw-normal rounded-pill p-2">Python</span>
+                    <span class="badge bg-dark-card border border-primary-tech text-white fw-normal rounded-pill p-2">AWS</span>
+                    <span class="badge bg-dark-card border border-primary-tech text-white fw-normal rounded-pill p-2">Azure</span>
+                    <span class="badge bg-dark-card border border-primary-tech text-white fw-normal rounded-pill p-2">Docker</span>
+                    <span class="badge bg-dark-card border border-primary-tech text-white fw-normal rounded-pill p-2">Kubernetes</span>
+                    <span class="badge bg-dark-card border border-primary-tech text-white fw-normal rounded-pill p-2">MongoDB</span>
+                    <span class="badge bg-dark-card border border-primary-tech text-white fw-normal rounded-pill p-2">PostgreSQL</span>
+                    <span class="badge bg-dark-card border border-primary-tech text-white fw-normal rounded-pill p-2">TypeScript</span>
+                    <span class="badge bg-dark-card border border-primary-tech text-white fw-normal rounded-pill p-2">Next.js</span>
+                    <span class="badge bg-dark-card border border-primary-tech text-white fw-normal rounded-pill p-2">GraphQL</span>
+                    <span class="badge bg-dark-card border border-primary-tech text-white fw-normal rounded-pill p-2">PHP</span>
+                    <span class="badge bg-dark-card border border-primary-tech text-white fw-normal rounded-pill p-2">Laravel</span>
+                    <span class="badge bg-dark-card border border-primary-tech text-white fw-normal rounded-pill p-2">MySQL</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="py-5 bg-black text-white position-relative overflow-hidden">
+            <div class="background-animation">
+                <li class="icon icon-github"></li>
+                <li class="icon icon-server"></li>
+                <li class="icon icon-cloud"></li>
+                <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+            </div>
+            <div class="container">
+                <h2 class="text-center fw-bold mb-5 text-primary-portfolio">Our Portfolio</h2>
+                <div class="d-flex justify-content-center gap-2 mb-4">
+                    <button class="btn btn-outline-portfolio rounded-pill">All Projects</button>
+                    <button class="btn btn-outline-portfolio rounded-pill">Web Applications</button>
+                    <button class="btn btn-outline-portfolio rounded-pill">Mobile Apps</button>
+                    <button class="btn btn-outline-portfolio rounded-pill">Cloud Solutions</button>
+                    <button class="btn btn-outline-portfolio rounded-pill">Data Analytics</button>
+                </div>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <div class="col">
+                        <div class="card h-100 bg-dark-card border border-primary-portfolio shadow-sm rounded-4 p-3">
+                            <img src="ecommerce.png.png" class="img-fluid rounded-3 mb-3" alt="E-Commerce Platform">
+                            <div class="card-body">
+                                <h5 class="fw-bold text-primary-portfolio">E-Commerce Platform Modernization</h5>
+                                <p class="text-light-50 small">Complete overhaul of legacy e-commerce system handling 1M+ daily transactions.</p>
+                                <div class="d-flex flex-wrap gap-2 mb-3">
+                                    <span class="badge bg-secondary border border-primary-tech text-white">React</span>
+                                    <span class="badge bg-secondary border border-primary-tech text-white">Node.js</span>
+                                    <span class="badge bg-secondary border border-primary-tech text-white">AWS</span>
+                                    <span class="badge bg-secondary border border-primary-tech text-white">PostgreSQL</span>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <a href="#" class="btn btn-sm btn-outline-portfolio">View</a>
+                                    <a href="#" class="btn btn-sm btn-outline-portfolio">Code</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 bg-dark-card border border-primary-portfolio shadow-sm rounded-4 p-3">
+                            <img src="medical.png.png" class="img-fluid rounded-3 mb-3" alt="Healthcare Data Analytics Platform">
+                            <div class="card-body">
+                                <h5 class="fw-bold text-primary-portfolio">Healthcare Data Analytics Platform</h5>
+                                <p class="text-light-50 small">Real-time analytics dashboard for monitoring patient data across multiple hospitals.</p>
+                                <div class="d-flex flex-wrap gap-2 mb-3">
+                                    <span class="badge bg-secondary border border-primary-tech text-white">Python</span>
+                                    <span class="badge bg-secondary border border-primary-tech text-white">Django</span>
+                                    <span class="badge bg-secondary border border-primary-tech text-white">D3.js</span>
+                                    <span class="badge bg-secondary border border-primary-tech text-white">MongoDB</span>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <a href="#" class="btn btn-sm btn-outline-portfolio">View</a>
+                                    <a href="#" class="btn btn-sm btn-outline-portfolio">Code</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 bg-dark-card border border-primary-portfolio shadow-sm rounded-4 p-3">
+                            <img src="mbank.png.png" class="img-fluid rounded-3 mb-3" alt="Mobile Banking Application">
+                            <div class="card-body">
+                                <h5 class="fw-bold text-primary-portfolio">Mobile Banking Application</h5>
+                                <p class="text-light-50 small">Secure mobile banking app with biometric authentication and real-time notifications.</p>
+                                <div class="d-flex flex-wrap gap-2 mb-3">
+                                    <span class="badge bg-secondary border border-primary-tech text-white">React Native</span>
+                                    <span class="badge bg-secondary border border-primary-tech text-white">Node.js</span>
+                                    <span class="badge bg-secondary border border-primary-tech text-white">JWT</span>
+                                    <span class="badge bg-secondary border border-primary-tech text-white">AWS</span>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <a href="#" class="btn btn-sm btn-outline-portfolio">View</a>
+                                    <a href="#" class="btn btn-sm btn-outline-portfolio">Code</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 bg-dark-card border border-primary-portfolio shadow-sm rounded-4 p-3">
+                            <img src="cloud.png.png" class="img-fluid rounded-3 mb-3" alt="Cloud Migration">
+                            <div class="card-body">
+                                <h5 class="fw-bold text-primary-portfolio">Cloud Migration & DevOps</h5>
+                                <p class="text-light-50 small">Complete infrastructure migration to cloud with automated CI/CD pipelines.</p>
+                                <div class="d-flex flex-wrap gap-2 mb-3">
+                                    <span class="badge bg-secondary border border-primary-tech text-white">AWS</span>
+                                    <span class="badge bg-secondary border border-primary-tech text-white">Docker</span>
+                                    <span class="badge bg-secondary border border-primary-tech text-white">Kubernetes</span>
+                                    <span class="badge bg-secondary border border-primary-tech text-white">Terraform</span>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <a href="#" class="btn btn-sm btn-outline-portfolio">View</a>
+                                    <a href="#" class="btn btn-sm btn-outline-portfolio">Code</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col">
+                        <div class="card h-100 bg-dark-card border border-primary-portfolio shadow-sm rounded-4 p-3">
+                            <img src="software.png.png" class="img-fluid rounded-3 mb-3" alt="School & College Website">
+                            <div class="card-body">
+                                <h5 class="fw-bold text-primary-portfolio">School & College Website</h5>
+                                <p class="text-light-50 small">Complete Website with full of feacthers</p>
+                                <div class="d-flex flex-wrap gap-2 mb-3">
+                                    <span class="badge bg-secondary border border-primary-tech text-white">Online Results</span>
+                                    <span class="badge bg-secondary border border-primary-tech text-white">Attendence System</span>
+                                    <span class="badge bg-secondary border border-primary-tech text-white">User Friendly Dashboards</span>
+                                    <span class="badge bg-secondary border border-primary-tech text-white">Online Admission</span>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <a href="#" class="btn btn-sm btn-outline-portfolio">View</a>
+                                    <a href="#" class="btn btn-sm btn-outline-portfolio">Code</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 bg-dark-card border border-primary-portfolio shadow-sm rounded-4 p-3">
+                            <img src="ai.png.png" class="img-fluid rounded-3 mb-3" alt="AI-Powered Inventory Management">
+                            <div class="card-body">
+                                <h5 class="fw-bold text-primary-portfolio">AI-Powered Inventory Management</h5>
+                                <p class="text-light-50 small">Machine learning system for predictive inventory management and demand forecasting.</p>
+                                <div class="d-flex flex-wrap gap-2 mb-3">
+                                    <span class="badge bg-secondary border border-primary-tech text-white">Python</span>
+                                    <span class="badge bg-secondary border border-primary-tech text-white">TensorFlow</span>
+                                    <span class="badge bg-secondary border border-primary-tech text-white">React</span>
+                                    <span class="badge bg-secondary border border-primary-tech text-white">PostgreSQL</span>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <a href="#" class="btn btn-sm btn-outline-portfolio">View</a>
+                                    <a href="#" class="btn btn-sm btn-outline-portfolio">Code</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 bg-dark-card border border-primary-portfolio shadow-sm rounded-4 p-3">
+                            <img src="software.png.png" class="img-fluid rounded-3 mb-3" alt="Enterprise Web Application">
+                            <div class="card-body">
+                                <h5 class="fw-bold text-primary-portfolio">Enterprise Web Application</h5>
+                                <p class="text-light-50 small">Custom CRM and project management platform for enterprise clients.</p>
+                                <div class="d-flex flex-wrap gap-2 mb-3">
+                                    <span class="badge bg-secondary border border-primary-tech text-white">Vue.js</span>
+                                    <span class="badge bg-secondary border border-primary-tech text-white">Laravel</span>
+                                    <span class="badge bg-secondary border border-primary-tech text-white">MySQL</span>
+                                    <span class="badge bg-secondary border border-primary-tech text-white">Redis</span>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <a href="#" class="btn btn-sm btn-outline-portfolio">View</a>
+                                    <a href="#" class="btn btn-sm btn-outline-portfolio">Code</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="py-5 bg-black text-white position-relative overflow-hidden">
+            <div class="background-animation">
+                <li class="icon icon-code"></li>
+                <li class="icon icon-linkedin"></li>
+                <li class="icon icon-twitter"></li>
+                <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+            </div>
+            <div class="container text-center">
+                <h2 class="fw-bold mb-5 text-primary-team">Meet Our Expert Team</h2>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <div class="col">
+                        <div class="card h-100 bg-dark-card border border-primary-team shadow-sm rounded-4 text-center p-3">
+                            <img src="mehedi.jpg" class="rounded-circle mx-auto my-3 border border-primary-team team-image" alt="MEHEDI">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold text-primary-team">MEHEDI</h5>
+                                <p class="card-text text-light-50">CEO & Chief Technology Officer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 bg-dark-card border border-primary-team shadow-sm rounded-4 text-center p-3">
+                            <img src="suha.jpg" class="rounded-circle mx-auto my-3 border border-primary-team team-image" alt="Sumaiya Akter">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold text-primary-team">Sumaiya Akter</h5>
+                                <p class="card-text text-light-50">Managing Director & Lead Full-Stack Developer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 bg-dark-card border border-primary-team shadow-sm rounded-4 text-center p-3">
+                            <img src="sohanur.jpg" class="rounded-circle mx-auto my-3 border border-primary-team team-image" alt="Sohanur Mahmud">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold text-primary-team">Sohanur Mahmud</h5>
+                                <p class="card-text text-light-50">Cybersecurity Specialist</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 bg-dark-card border border-primary-team shadow-sm rounded-4 text-center p-3">
+                            <img src="emon.jpg" class="rounded-circle mx-auto my-3 border border-primary-team team-image" alt="Emon Khan">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold text-primary-team">Emon Khan</h5>
+                                <p class="card-text text-light-50">Data Analytics Lead</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 bg-dark-card border border-primary-team shadow-sm rounded-4 text-center p-3">
+                            <img src="pallab.jpg" class="rounded-circle mx-auto my-3 border border-primary-team team-image" alt="Pallab Mondol">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold text-primary-team">Pallab Mondol</h5>
+                                <p class="card-text text-light-50">Mobile Development Expert</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 bg-dark-card border border-primary-team shadow-sm rounded-4 text-center p-3">
+                            <img src="sakib.jpg" class="rounded-circle mx-auto my-3 border border-primary-team team-image" alt="Nazmus Sakib">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold text-primary-team">Nazmus Sakib</h5>
+                                <p class="card-text text-light-50">Project Manager & UI/UX Expert</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-5 bg-black text-white position-relative overflow-hidden">
+            <div class="background-animation">
+                <li class="icon icon-twitter"></li>
+                <li class="icon icon-linkedin"></li>
+                <li class="icon icon-cloud"></li>
+                <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+            </div>
+            <div class="container">
+                <h2 class="text-center fw-bold mb-5 text-primary-contact">Get In Touch</h2>
+                <div class="row g-5">
+                    <div class="col-lg-6">
+                        <div class="d-flex flex-column gap-4 text-white">
+                            <div>
+                                <h5 class="fw-bold text-primary-contact">Our Office</h5>
+                                <p class="text-light-50">Dhaka, Bangladesh</p>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold text-primary-contact">Phone Number</h5>
+                                <p class="text-light-50">01727-393466</p>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold text-primary-contact">Email Address</h5>
+                                <p class="text-light-50">info@armsinfotech.bd</p>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold text-primary-contact">Business Hours</h5>
+                                <p class="text-light-50">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                                <p class="text-light-50">Weekend support available</p>
+                            </div>
+                            <div class="d-flex gap-3">
+                                <a href="#" class="btn btn-outline-contact rounded-pill">Live Chat</a>
+                                <a href="#" class="btn btn-outline-contact rounded-pill">Schedule Call</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <form id="contact-form" class="p-4 rounded-4 shadow-sm border border-primary-contact" style="background-color: var(--dark-card);">
+                            <div class="mb-3">
+                                <label for="fullName" class="form-label text-primary-contact">Full Name</label>
+                                <input type="text" class="form-control form-control-dark" id="fullName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="emailAddress" class="form-label text-primary-contact">Email Address</label>
+                                <input type="email" class="form-control form-control-dark" id="emailAddress" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label text-primary-contact">Your Message</label>
+                                <textarea class="form-control form-control-dark" id="message" rows="4" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="service" class="form-label text-primary-contact">Select a service</label>
+                                <select class="form-select form-control-dark" id="service">
+                                    <option selected disabled>Select a service</option>
+                                    <option>Custom Software Development</option>
+                                    <option>Cloud Solutions</option>
+                                    <option>Cybersecurity</option>
+                                    <option>Data Analytics</option>
+                                    <option>IT Consulting</option>
+                                    <option>Mobile Development</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="budget" class="form-label text-primary-contact">Select budget range</label>
+                                <select class="form-select form-control-dark" id="budget">
+                                    <option selected disabled>Select budget range</option>
+                                    <option>Under $25k</option>
+                                    <option>$25k - $50k</option>
+                                    <option>$50k - $100k</option>
+                                    <option>$100k - $250k</option>
+                                    <option>Over $250k</option>
+                                </select>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" value="" id="privacyPolicy" required>
+                                <label class="form-check-label small text-light-50" for="privacyPolicy">
+                                    By submitting this form, you agree to our privacy policy.
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary-contact w-100 rounded-pill py-3">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5 bg-black text-white position-relative overflow-hidden">
+            <div class="background-animation">
+                <li class="icon icon-code"></li>
+                <li class="icon icon-server"></li>
+                <li class="icon icon-cloud"></li>
+                <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+            </div>
+            <div class="container">
+                <h2 class="text-center fw-bold mb-5 text-primary-faq">Frequently Asked Questions</h2>
+                <div class="accordion accordion-flush" id="faqAccordion">
+                    <div class="accordion-item border-0 mb-3 rounded-3 shadow-sm bg-dark-card">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed fw-bold text-primary-faq bg-dark-card" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                How long does a typical project take?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-light-50">
+                                Project timelines vary based on complexity. Simple applications take 4-8 weeks, while enterprise solutions may take 3-6 months.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border-0 mb-3 rounded-3 shadow-sm bg-dark-card">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed fw-bold text-primary-faq bg-dark-card" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Do you provide ongoing support?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-light-50">
+                                Yes, we offer comprehensive support packages including maintenance, updates, and 24/7 monitoring for all our solutions.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border-0 mb-3 rounded-3 shadow-sm bg-dark-card">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed fw-bold text-primary-faq bg-dark-card" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                What technologies do you work with?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-light-50">
+                                We work with modern technologies including React, Node.js, Python, AWS, Azure, and many others based on your needs.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border-0 mb-3 rounded-3 shadow-sm bg-dark-card">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed fw-bold text-primary-faq bg-dark-card" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Do you work with startups?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-light-50">
+                                Absolutely! We work with businesses of all sizes, from startups to Fortune 500 companies, tailoring our approach to your specific needs.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-custom-dark text-white py-5">
+        <div class="container">
+            <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="fw-bold text-light">ARMS InfoTech BD</h5>
+                    <p class="text-custom-muted">Providing innovative digital solutions for a connected world.We're a team of passionate technology experts dedicated to helping businesses leverage the power of modern IT solutions to achieve their goals and drive growth.</p>
+                    <div>
+                        <a href="#" class="me-3 text-light"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-3 text-light"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-3 text-light"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="fw-bold text-primary-services">Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light-50 text-decoration-none">Custom Software Development</a></li>
+                        <li><a href="#" class="text-light-50 text-decoration-none">Cloud Solutions</a></li>
+                        <li><a href="#" class="text-light-50 text-decoration-none">Cybersecurity</a></li>
+                        <li><a href="#" class="text-light-50 text-decoration-none">Data Analytics</a></li>
+                        <li><a href="#" class="text-light-50 text-decoration-none">IT Consulting</a></li>
+                        <li><a href="#" class="text-light-50 text-decoration-none">Mobile Development</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="fw-bold text-primary-about">Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light-50 text-decoration-none">About Us</a></li>
+                        <li><a href="#" class="text-light-50 text-decoration-none">Our Team</a></li>
+                        <li><a href="#" class="text-light-50 text-decoration-none">Careers</a></li>
+                        <li><a href="#" class="text-light-50 text-decoration-none">Case Studies</a></li>
+                        <li><a href="#" class="text-light-50 text-decoration-none">Blog</a></li>
+                        <li><a href="#" class="text-light-50 text-decoration-none">News</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="fw-bold text-primary-portfolio">Resources</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light-50 text-decoration-none">Documentation</a></li>
+                        <li><a href="#" class="text-light-50 text-decoration-none">API Reference</a></li>
+                        <li><a href="#" class="text-light-50 text-decoration-none">Support Center</a></li>
+                        <li><a href="#" class="text-light-50 text-decoration-none">Community</a></li>
+                        <li><a href="#" class="text-light-50 text-decoration-none">Tutorials</a></li>
+                        <li><a href="#" class="text-light-50 text-decoration-none">Webinars</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="fw-bold text-primary-contact">Legal</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light-50 text-decoration-none">Privacy Policy</a></li>
+                        <li><a href="#" class="text-light-50 text-decoration-none">Terms of Service</a></li>
+                        <li><a href="#" class="text-light-50 text-decoration-none">Security</a></li>
+                        <li><a href="#" class="text-light-50 text-decoration-none">GDPR Compliance</a></li>
+                        <li><a href="#" class="text-light-50 text-decoration-none">Cookies Policy</a></li>
+                        <li><a href="#" class="text-light-50 text-decoration-none">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="mt-4 border-secondary">
+            <div class="text-center mt-3">
+                <p class="text-light-50 mb-0">&copy; 2024 ARMS InfoTech BD. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</body>
+</html>
